@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 import java.util.stream.Collectors;
-import pairmatching.domain.Course;
-import pairmatching.domain.Crew;
-import pairmatching.domain.Pair;
 import pairmatching.domain.PairGenerator;
+import pairmatching.domain.vo.Course;
+import pairmatching.domain.vo.Crew;
+import pairmatching.domain.vo.Pair;
 
 public class RandomPairGenerator implements PairGenerator {
     @Override

@@ -2,8 +2,8 @@ package pairmatching.view;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import pairmatching.domain.Crew;
-import pairmatching.domain.Pair;
+import pairmatching.domain.vo.Crew;
+import pairmatching.domain.vo.Pair;
 
 public class OutputView {
 

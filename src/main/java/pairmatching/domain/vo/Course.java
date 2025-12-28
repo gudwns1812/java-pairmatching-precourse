@@ -1,4 +1,4 @@
-package pairmatching.domain;
+package pairmatching.domain.vo;
 
 import static pairmatching.exception.ErrorCode.NOT_VALID_COURSE;
 

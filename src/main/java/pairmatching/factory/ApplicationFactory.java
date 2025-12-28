@@ -12,8 +12,6 @@ import pairmatching.controller.Command;
 import pairmatching.controller.PairMatchingController;
 import pairmatching.controller.command.PairMatchingCommand;
 import pairmatching.controller.command.PairRetrieveCommand;
-import pairmatching.domain.Course;
-import pairmatching.domain.Crew;
 import pairmatching.domain.CrewGroup;
 import pairmatching.domain.MatchingRecords;
 import pairmatching.domain.PairGenerator;
@@ -21,6 +19,8 @@ import pairmatching.domain.PairMatchingProgram;
 import pairmatching.domain.crewgroup.BackEndCrewGroup;
 import pairmatching.domain.crewgroup.FrontEndCrewGroup;
 import pairmatching.domain.pairgenerator.RandomPairGenerator;
+import pairmatching.domain.vo.Course;
+import pairmatching.domain.vo.Crew;
 
 public class ApplicationFactory {
 

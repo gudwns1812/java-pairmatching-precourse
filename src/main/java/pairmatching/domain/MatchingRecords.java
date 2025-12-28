@@ -3,6 +3,7 @@ package pairmatching.domain;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import pairmatching.domain.vo.Pair;
 
 public class MatchingRecords {
     private final Map<MatchingCondition, List<Pair>> records;

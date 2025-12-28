@@ -1,10 +1,10 @@
 package pairmatching.factory;
 
 import java.util.List;
-import pairmatching.domain.Course;
-import pairmatching.domain.Level;
 import pairmatching.domain.MatchingCondition;
-import pairmatching.domain.Mission;
+import pairmatching.domain.vo.Course;
+import pairmatching.domain.vo.Level;
+import pairmatching.domain.vo.Mission;
 
 public class PairMatchingFactory {
 

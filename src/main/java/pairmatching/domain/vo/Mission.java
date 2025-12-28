@@ -1,4 +1,4 @@
-package pairmatching.domain;
+package pairmatching.domain.vo;
 
 import java.util.Arrays;
 import pairmatching.exception.ErrorCode;

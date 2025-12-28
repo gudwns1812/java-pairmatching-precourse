@@ -2,6 +2,8 @@ package pairmatching.domain;
 
 import java.util.List;
 import java.util.Map;
+import pairmatching.domain.vo.Course;
+import pairmatching.domain.vo.Pair;
 
 public class PairMatchingProgram {
     private final Map<Course, CrewGroup> group;

@@ -1,6 +1,9 @@
 package pairmatching.domain;
 
 import java.util.Objects;
+import pairmatching.domain.vo.Course;
+import pairmatching.domain.vo.Level;
+import pairmatching.domain.vo.Mission;
 
 public class MatchingCondition {
     private final Course course;

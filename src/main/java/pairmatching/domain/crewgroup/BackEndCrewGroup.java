@@ -1,11 +1,11 @@
 package pairmatching.domain.crewgroup;
 
 import java.util.List;
-import pairmatching.domain.Course;
-import pairmatching.domain.Crew;
 import pairmatching.domain.CrewGroup;
-import pairmatching.domain.Pair;
 import pairmatching.domain.PairGenerator;
+import pairmatching.domain.vo.Course;
+import pairmatching.domain.vo.Crew;
+import pairmatching.domain.vo.Pair;
 
 public class BackEndCrewGroup implements CrewGroup {
     private final List<Crew> crews;

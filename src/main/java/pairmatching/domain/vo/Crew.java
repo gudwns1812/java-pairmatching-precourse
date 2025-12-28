@@ -1,4 +1,4 @@
-package pairmatching.domain;
+package pairmatching.domain.vo;
 
 public class Crew {
     private final Course course;
