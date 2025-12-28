@@ -17,5 +17,6 @@ public final class PrintMessage {
             + "############################################\n"
             + "과정, 레벨, 미션을 선택하세요.\n"
             + "ex) 백엔드, 레벨1, 자동차경주";
-    public static final String PRINT_MATCHING_AGAIN = "매칭 정보가 있습니다. 다시 매칭하시겠습니까?";
+    public static final String PRINT_MATCHING_AGAIN = "매칭 정보가 있습니다. 다시 매칭하시겠습니까?\n"
+            + "네 | 아니오";
 }

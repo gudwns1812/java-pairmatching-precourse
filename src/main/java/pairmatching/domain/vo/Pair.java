@@ -1,6 +1,8 @@
 package pairmatching.domain.vo;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Pair {
     private final List<Crew> crews;
@@ -15,5 +17,21 @@ public class Pair {
 
     public List<Crew> getCrews() {
         return List.copyOf(crews);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Pair target = (Pair) obj;
+
+        Set<Crew> c1 = new HashSet<>(crews);
+        Set<Crew> c2 = new HashSet<>(target.crews);
+
+        for (Crew crew : c1) {
+            if (!c2.contains(crew)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

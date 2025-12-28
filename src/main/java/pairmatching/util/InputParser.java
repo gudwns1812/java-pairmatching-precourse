@@ -13,7 +13,7 @@ public class InputParser {
         if (split.length != 3) {
             throw new IllegalArgumentException(ErrorCode.NOT_VALID_COURSE_AND_MISSION.getMessage());
         }
-
+        
         return List.of(split);
     }
 }

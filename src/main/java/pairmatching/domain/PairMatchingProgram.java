@@ -21,8 +21,15 @@ public class PairMatchingProgram {
         CrewGroup crewGroup = group.get(course);
 
         List<Pair> pairs = crewGroup.generatePairs(generator);
+
+        int tries = 0;
         while (records.checkPairs(condition, pairs)) {
             pairs = crewGroup.generatePairs(generator);
+            tries++;
+
+            if (tries > 3) {
+                throw new IllegalArgumentException("실패");
+            }
         }
 
         records = records.savePairs(condition, pairs);

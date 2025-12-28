@@ -2,7 +2,6 @@ package pairmatching.factory;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,7 +10,9 @@ import java.util.Map;
 import pairmatching.controller.Command;
 import pairmatching.controller.PairMatchingController;
 import pairmatching.controller.command.PairMatchingCommand;
+import pairmatching.controller.command.PairResetCommand;
 import pairmatching.controller.command.PairRetrieveCommand;
+import pairmatching.controller.command.QuitCommand;
 import pairmatching.domain.CrewGroup;
 import pairmatching.domain.MatchingRecords;
 import pairmatching.domain.PairGenerator;
@@ -31,7 +32,9 @@ public class ApplicationFactory {
     public Map<String, Command> commands() {
         return Map.of(
                 "1", new PairMatchingCommand(),
-                "2", new PairRetrieveCommand()
+                "2", new PairRetrieveCommand(),
+                "3", new PairResetCommand(),
+                "Q", new QuitCommand()
         );
     }
 
@@ -78,8 +81,6 @@ public class ApplicationFactory {
                 String name = reader.readLine();
                 crews.add(new Crew(course, name));
             }
-        } catch (FileNotFoundException e) {
-            throw new IllegalArgumentException(e);
         } catch (IOException e) {
             throw new IllegalArgumentException(e);
         }

@@ -12,23 +12,31 @@ import pairmatching.view.OutputView;
 import pairmatching.view.PrintMessage;
 
 public class PairMatchingCommand implements Command {
-    private static final String DELIMITER = ",";
 
     @Override
     public void execute(PairMatchingProgram program) {
-
-        MatchingCondition condition = getCondition();
-
-        if (program.exists(condition)) {
-            String overWrite = readOverWrite();
-            if (overWrite.equals("아니요")) {
-                return;
-            }
-        }
-
-        List<Pair> pairs = program.createPairs(condition);
+        List<Pair> pairs = getMatchingCondition(program);
 
         OutputView.printPairs(pairs);
+    }
+
+    private List<Pair> getMatchingCondition(PairMatchingProgram program) {
+        while (true) {
+            try {
+                MatchingCondition condition = getCondition();
+
+                if (program.exists(condition)) {
+                    String overWrite = readOverWrite();
+                    if (overWrite.equals("아니요")) {
+                        continue;
+                    }
+                }
+
+                return program.createPairs(condition);
+            } catch (IllegalArgumentException e) {
+                OutputView.printError(e.getMessage());
+            }
+        }
     }
 
     private MatchingCondition getCondition() {

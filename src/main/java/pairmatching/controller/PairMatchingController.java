@@ -11,7 +11,7 @@ import pairmatching.view.PrintMessage;
 
 public class PairMatchingController {
     private final Map<String, Command> commands;
-    private PairMatchingProgram program;
+    private final PairMatchingProgram program;
 
     public PairMatchingController(Map<String, Command> commands, PairMatchingProgram program) {
         this.commands = commands;
@@ -25,8 +25,6 @@ public class PairMatchingController {
             if (inputCommand.equals("Q")) {
                 break;
             }
-            
-            validateCommand(inputCommand);
 
             Command command = commands.get(inputCommand);
             command.execute(program);
@@ -36,7 +34,11 @@ public class PairMatchingController {
     private String readCommand() {
         return retryOnError(() -> {
             OutputView.printPrompt(PrintMessage.CHOOSE_COMMAND);
-            return InputView.readCommand();
+            String command = InputView.readCommand();
+
+            validateCommand(command);
+
+            return command;
         });
     }
 
