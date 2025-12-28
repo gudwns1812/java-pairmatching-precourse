@@ -38,4 +38,8 @@ public class MatchingRecords {
 
         return new MatchingRecords(newRecords);
     }
+
+    public List<Pair> getPairsWith(MatchingCondition condition) {
+        return records.get(condition);
+    }
 }

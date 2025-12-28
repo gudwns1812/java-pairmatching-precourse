@@ -11,6 +11,7 @@ import java.util.Map;
 import pairmatching.controller.Command;
 import pairmatching.controller.PairMatchingController;
 import pairmatching.controller.command.PairMatchingCommand;
+import pairmatching.controller.command.PairRetrieveCommand;
 import pairmatching.domain.Course;
 import pairmatching.domain.Crew;
 import pairmatching.domain.CrewGroup;
@@ -29,7 +30,8 @@ public class ApplicationFactory {
 
     public Map<String, Command> commands() {
         return Map.of(
-                "1", new PairMatchingCommand()
+                "1", new PairMatchingCommand(),
+                "2", new PairRetrieveCommand()
         );
     }
 

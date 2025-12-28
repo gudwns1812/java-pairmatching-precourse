@@ -5,8 +5,10 @@ public enum ErrorCode {
     NOT_VALID_COURSE("코스의 이름이 정확하지 않습니다."),
     NOT_VALID_LEVEL("레벨의 이름이 정확하지 않습니다."),
     NOT_VALID_COURSE_AND_MISSION("정확한 코스와 미션을 입력해주세요"),
-    NOT_VALID_MISSION("미션의 이름이 정확하지 않습니다.");
+    NOT_VALID_MISSION("미션의 이름이 정확하지 않습니다."),
+    NOT_EXIST_MATCHING("매칭 이력이 없습니다.");
 
+    private static final String ERROR_PREFIX = "[ERROR] ";
     private final String message;
 
     ErrorCode(String message) {
@@ -14,6 +16,6 @@ public enum ErrorCode {
     }
 
     public String getMessage() {
-        return message;
+        return ERROR_PREFIX + message;
     }
 }
