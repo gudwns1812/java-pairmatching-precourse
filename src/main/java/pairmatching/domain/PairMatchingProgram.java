@@ -35,4 +35,8 @@ public class PairMatchingProgram {
     public MatchingRecords getRecords() {
         return records;
     }
+
+    public void reset() {
+        records = records.reset();
+    }
 }

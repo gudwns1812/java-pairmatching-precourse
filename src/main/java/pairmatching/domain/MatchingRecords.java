@@ -42,4 +42,8 @@ public class MatchingRecords {
     public List<Pair> getPairsWith(MatchingCondition condition) {
         return records.get(condition);
     }
+
+    public MatchingRecords reset() {
+        return new MatchingRecords(Map.of());
+    }
 }
