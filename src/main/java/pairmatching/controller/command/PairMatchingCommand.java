@@ -17,14 +17,7 @@ public class PairMatchingCommand implements Command {
     @Override
     public void execute(PairMatchingProgram program) {
 
-        MatchingCondition condition = retryOnError(() -> {
-            OutputView.printPrompt(PrintMessage.PRINT_COURSE_MISSION);
-            String courseAndMission = InputView.readCourseAndMission();
-
-            List<String> courseMission = InputParser.parse(courseAndMission);
-
-            return PairMatchingFactory.createCondition(courseMission);
-        });
+        MatchingCondition condition = getCondition();
 
         if (program.exists(condition)) {
             String overWrite = readOverWrite();
@@ -36,6 +29,17 @@ public class PairMatchingCommand implements Command {
         List<Pair> pairs = program.createPairs(condition);
 
         OutputView.printPairs(pairs);
+    }
+
+    private MatchingCondition getCondition() {
+        return retryOnError(() -> {
+            OutputView.printPrompt(PrintMessage.PRINT_COURSE_MISSION);
+            String courseAndMission = InputView.readCourseAndMission();
+
+            List<String> courseMission = InputParser.parse(courseAndMission);
+
+            return PairMatchingFactory.createCondition(courseMission);
+        });
     }
 
     private String readOverWrite() {
